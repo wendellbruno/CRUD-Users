@@ -16,5 +16,5 @@ app.get('/users', async (req,res) => {
     const getUsersController = new GetUsersController(mySqlGetUsersRepository);
     const response = await getUsersController.handle();
 
-    res.send(response.body)
+    res.send(response.body).status(response.statusCode)
 })
